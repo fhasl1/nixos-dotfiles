@@ -9,6 +9,7 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1"; 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [ "quiet" "loglevel=3" ];
 
   # Network
   networking.hostName = "amalthea"; # Define your hostname.
@@ -69,6 +70,12 @@
     user = "fhasl";
   };
   services.dbus.enable = true;
+  services.fstrim.enable = true;
+  services.fwupd.enable = true;
+  services.journald.extraConfig = ''
+    SystemMaxUse=500M
+    RuntimeMaxUse=200M
+  '';
 
   # User shits
   users.users.fhasl = {
@@ -153,17 +160,26 @@
       };
     };
   };
+  systemd.services.NetworkManager-wait-online.enable = false;
+  systemd.services = {
+    systemd-udev-settle.enable = false;
+  };
 
   # NixOS shits
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store = true;
+    max-jobs = "auto";
+    cores = 0;
   };
   nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than-3d";
   };
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
   system.stateVersion = "25.11"; 
   nixpkgs.config.allowUnfree = true;
   programs.nix-ld.enable = true;
