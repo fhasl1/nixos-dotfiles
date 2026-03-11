@@ -117,6 +117,7 @@
     zoxide
     eza
     pay-respects
+    duf
     github-cli
     ripgrep
     pywal16
