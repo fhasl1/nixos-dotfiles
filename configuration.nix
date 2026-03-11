@@ -12,7 +12,6 @@
 
   # Network
   networking.hostName = "amalthea"; # Define your hostname.
-  networking.networkmanager.enable = true;
   networking.wireless.iwd = {
     enable = true;
     settings = {
