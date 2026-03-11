@@ -156,7 +156,7 @@
 
   # NixOS shits
   nix.settings = {
-    experiental-features = [ "nix-command" "flakes" ];
+    experimental-features = [ "nix-command" "flakes" ];
     auto-optimise-store = true;
   };
   nix.gc = {
