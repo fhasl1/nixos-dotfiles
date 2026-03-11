@@ -95,7 +95,13 @@
   programs.zsh = {
     enable = true;
   };
-
+  programs.dconf.enable = true;
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    jetbrains-mono
+  ];
   environment.systemPackages = with pkgs; [
     neovim
     git
@@ -163,6 +169,10 @@
   systemd.services.NetworkManager-wait-online.enable = false;
   systemd.services = {
     systemd-udev-settle.enable = false;
+  };
+  environment.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
+    MOZ_ENABLE_WAYLAND = "1";
   };
 
   # NixOS shits
