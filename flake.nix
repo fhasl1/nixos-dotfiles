@@ -12,14 +12,14 @@
 			inputs.home-manager.follows = "home-manager";
 		};
 		nixos-hardware = {
-			url = "github:NixOS/nixos-hardware/master";
+			url = "github:NixOS/nixos-hardware";
 		};
 			fcitx5-lotus = {
 				url = "github:LotusInputMethod/fcitx5-lotus";
 				inputs.nixpkgs.follows = "nixpkgs";
 			};
 		};
-	outputs = { self, nixpkgs, home-manager, nixos-hardware, fcitx5-lotus, ... }@inputs: {
+	outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, fcitx5-lotus, ... }: {
 		nixosConfigurations.amalthea = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			modules = [
