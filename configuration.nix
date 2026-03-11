@@ -64,10 +64,10 @@
   };
   services.throttled.enable = true;
   services.blueman.enable = true;
-  # services.fcitx5-lotus = {
-  #   enable = true;
-  #   user = "fhasl";
-  # };
+  services.fcitx5-lotus = {
+    enable = true;
+    user = "fhasl";
+  };
 
   # User shits
   users.users.fhasl = {
