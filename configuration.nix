@@ -12,6 +12,7 @@
 
   # Network
   networking.hostName = "amalthea"; # Define your hostname.
+  networking.networkmanager.enable = true;
   networking.wireless.iwd = {
     enable = true;
     settings = {
@@ -29,7 +30,6 @@
     enable = true;
     fcitx5.addons = with pkgs; [
       fcitx5-mozc
-      kdePackages.fcitx5-unikey
     ];
   };
   
@@ -38,6 +38,8 @@
     enable = true;
     pulse.enable = true;
     wireplumber.enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
   };
   services.libinput.enable = true;
   services.openssh.enable = true;
@@ -62,17 +64,17 @@
       };
     };
   };
-  services.throttled.enable = true;
   services.blueman.enable = true;
   services.fcitx5-lotus = {
     enable = true;
     user = "fhasl";
   };
+  services.dbus.enable = true;
 
   # User shits
   users.users.fhasl = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "video" "input" "rtkit" ];
+    extraGroups = [ "wheel" "audio" "video" "input" "rtkit" "networkmanager" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
       tree
@@ -103,8 +105,6 @@
     bibata-cursors
     nwg-look
     bat
-    xdg-desktop-portal
-    xdg-desktop-portal-hyprland
     brightnessctl
     hyprshot
     unzip
@@ -121,7 +121,6 @@
     github-cli
     ripgrep
     pywal16
-    matugen
     obsidian
     waybar
     kdePackages.kdenlive
@@ -132,8 +131,16 @@
     enable = true;
     enable32Bit = true;
   };
-  hardware.graphics.extraPackages = with pkgs; [ intel-vaapi-driver intel-media-driver ];
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  };
+  hardware.graphics.extraPackages = with pkgs; [ 
+    intel-vaapi-driver 
+    intel-media-driver 
+  ];
   security.rtkit.enable = true;
+  security.polkit.enable = true;
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
@@ -149,14 +156,15 @@
   };
 
   # NixOS shits
-  nix.optimise.automatic = true;
-  nix.settings.auto-optimise-store = true;
+  nix.settings = {
+    experiental-features = [ "nix-command" "flakes" ];
+    auto-optimise-store = true;
+  };
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 3d";
+    options = "--delete-older-than-3d";
   };
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "25.11"; 
   nixpkgs.config.allowUnfree = true;
   programs.nix-ld.enable = true;
