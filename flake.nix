@@ -14,12 +14,15 @@
 		nixos-hardware = {
 			url = "github:NixOS/nixos-hardware";
 		};
-			fcitx5-lotus = {
-				url = "github:LotusInputMethod/fcitx5-lotus";
-				inputs.nixpkgs.follows = "nixpkgs";
-			};
+		fcitx5-lotus = {
+			url = "github:LotusInputMethod/fcitx5-lotus";
+			inputs.nixpkgs.follows = "nixpkgs";
 		};
-	outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, fcitx5-lotus, ... }: {
+		spicetify = {
+			url = "github:Gerg-L/spicetify-nix";
+		}
+	};
+	outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, fcitx5-lotus, spicetify-nix, ... }: {
 		nixosConfigurations.amalthea = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			modules = [

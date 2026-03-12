@@ -8,6 +8,7 @@
   # Kernel
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1"; 
+  boot.loader.grub.configurationLimit = 5;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [ "quiet" "loglevel=3" ];
 
