@@ -124,6 +124,7 @@
     hyprshot
     unzip
     vesktop
+    spotify
     wl-clipboard
     hyprpicker
     nodejs
