@@ -20,7 +20,7 @@
 		};
 		spicetify = {
 			url = "github:Gerg-L/spicetify-nix";
-		}
+		};
 	};
 	outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, fcitx5-lotus, spicetify-nix, ... }: {
 		nixosConfigurations.amalthea = nixpkgs.lib.nixosSystem {
