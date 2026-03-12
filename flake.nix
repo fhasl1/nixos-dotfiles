@@ -18,11 +18,8 @@
 			url = "github:LotusInputMethod/fcitx5-lotus";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-		spicetify = {
-			url = "github:Gerg-L/spicetify-nix";
-		};
 	};
-	outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, fcitx5-lotus, spicetify-nix, ... }: {
+	outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, fcitx5-lotus, ... }: {
 		nixosConfigurations.amalthea = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			modules = [
