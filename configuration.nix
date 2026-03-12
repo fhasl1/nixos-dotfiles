@@ -125,6 +125,7 @@
     unzip
     vesktop
     spotify
+    spicetify-cli
     wl-clipboard
     hyprpicker
     nodejs
