@@ -130,6 +130,7 @@
     wl-clipboard
     hyprpicker
     nodejs
+    yt-dlp
     btop
     fastfetch
     zoxide
