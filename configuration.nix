@@ -71,7 +71,10 @@
   };
   services.dbus.enable = true;
   services.fstrim.enable = true;
-  services.fwupd.enable = true;
+  services.fwupd = {
+    enable = true;
+    daemonSettings.DisabledPlugins = [ "test" "invalid" "bios" ];
+  };
   services.journald.extraConfig = ''
     SystemMaxUse=500M
     RuntimeMaxUse=200M
