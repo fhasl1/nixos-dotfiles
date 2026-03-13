@@ -125,6 +125,7 @@
     hyprshot
     unzip
     vesktop
+    wineWow64Packages.stable
     spotify
     spicetify-cli
     wl-clipboard
