@@ -128,6 +128,7 @@
     vesktop
     wineWow64Packages.stable
     spotify
+    libnotify
     swaynotificationcenter 
     wl-clip-persist
     cliphist
