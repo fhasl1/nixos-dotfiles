@@ -128,6 +128,9 @@
     vesktop
     wineWow64Packages.stable
     spotify
+    swaync
+    wl-clip-persist
+    cliphist
     spicetify-cli
     wl-clipboard
     hyprpicker
