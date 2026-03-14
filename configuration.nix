@@ -134,7 +134,6 @@
     nodejs
     yt-dlp
     btop
-    mako
     fastfetch
     zoxide
     eza
