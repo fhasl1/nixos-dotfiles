@@ -128,7 +128,7 @@
     vesktop
     wineWow64Packages.stable
     spotify
-    swaync
+    swaynotificationcenter 
     wl-clip-persist
     cliphist
     spicetify-cli
