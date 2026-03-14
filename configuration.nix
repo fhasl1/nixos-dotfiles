@@ -22,6 +22,7 @@
       };
     };
   };
+  networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
 
   # Localization
   time.timeZone = "Asia/Ho_Chi_Minh";
@@ -133,6 +134,7 @@
     nodejs
     yt-dlp
     btop
+    mako
     fastfetch
     zoxide
     eza
