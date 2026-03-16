@@ -133,6 +133,7 @@
     wl-clip-persist
     cliphist
     spicetify-cli
+    vlc
     wl-clipboard
     hyprpicker
     nodejs
