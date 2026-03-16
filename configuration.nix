@@ -133,6 +133,7 @@
     wl-clip-persist
     cliphist
     spicetify-cli
+    prismlauncher
     vlc
     wl-clipboard
     hyprpicker
