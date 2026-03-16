@@ -132,6 +132,7 @@
     swaynotificationcenter 
     wl-clip-persist
     cliphist
+    glfw3-minecraft
     spicetify-cli
     jemalloc
     libspng
