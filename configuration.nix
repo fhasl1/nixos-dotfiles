@@ -133,6 +133,7 @@
     wl-clip-persist
     cliphist
     spicetify-cli
+    jemalloc
     prismlauncher
     vlc
     wl-clipboard
