@@ -136,6 +136,7 @@
     spicetify-cli
     jemalloc
     libspng
+    gamemode
     cmake
     meson
     mesa
