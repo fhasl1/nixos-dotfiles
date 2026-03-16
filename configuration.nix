@@ -142,11 +142,11 @@
     wayland
     wayland-protocols
     libxkbcommon
-    xorg.xwayland
-    xorg.libXcursor
-    xorg.libXi
-    xorg.libXinerama
-    xorg.libXrandr
+    xwayland
+    libXcursor
+    libXi
+    libXinerama
+    libXrandr
     prismlauncher
     waywall
     vlc
