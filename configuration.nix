@@ -135,6 +135,7 @@
     spicetify-cli
     jemalloc
     prismlauncher
+    waywall
     vlc
     wl-clipboard
     hyprpicker
