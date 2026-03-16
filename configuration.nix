@@ -134,6 +134,19 @@
     cliphist
     spicetify-cli
     jemalloc
+    libspng
+    cmake
+    meson
+    mesa
+    luajit
+    wayland
+    wayland-protocols
+    libxkbcommon
+    xorg.xwayland
+    xorg.libXcursor
+    xorg.libXi
+    xorg.libXinerama
+    xorg.libXrandr
     prismlauncher
     waywall
     vlc
