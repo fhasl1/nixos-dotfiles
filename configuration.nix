@@ -142,6 +142,7 @@
     mesa
     luajit
     wayland
+    gvfs
     wayland-protocols
     libxkbcommon
     xwayland
